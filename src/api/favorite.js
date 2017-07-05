@@ -1,8 +1,10 @@
 'use strict'
 const config = require('../config');
-const random = require('./random');
+const rando = require('./random');
 const twit = require('twit');
 const T = new twit(config.twitter);
+
+console.log('Hitting favorite.js');
 
 const favorite = () => {
   let params = {
@@ -11,20 +13,22 @@ const favorite = () => {
     lang: 'en'
   };
 
-  T.get('search/tweets', params, (err, data) => {
+  T.get('search/tweets', params, (err, data, response) => {
     let tweet = data.statuses;
-    let randomTweet = random(tweet);
+    let randomTweet = rando(tweet);
 
-    if(err) {
-      console.log('ERROR: Cannot search tweet');
+    if (err) {
+      console.log('ERROR: Cannot Search Tweet!, Description here: ', err)
     }
 
     if(typeof randomTweet != 'undefined') {
-      T.post('favorite/create', {id: randomTweet.id_str}, (err, response) => {
+      T.post('favorite/create', {
+        id: randomTweet.id_str
+      }, (err, response) => {
         if(err) {
-          console.log('ERROR: in Retweeting');
+          console.log('ERROR: Cannot Favorite!');
         }
-        console.log('SUCCESS: Favorite tweet Successfull');
+        console.log('SUCCESS: Favorited: ', randomTweet.id_str.text);
       });
     }
   });

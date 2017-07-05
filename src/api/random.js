@@ -1,7 +1,7 @@
 'use strict'
-const random = (arr) => {
+const rando = (arr) => {
   let index = Math.floor(Math.random() * arr.length);
   return arr[index];
 }
 
-module.exports = random;
+module.exports = rando;

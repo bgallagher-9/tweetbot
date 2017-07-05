@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const twit = require('twit');
 const config = require('./config');
 const T = new twit(config.twitter);
@@ -10,3 +10,5 @@ setInterval(retweet, config.retweetRate);
 setInterval(favorite, config.favoriteRate);
 const stream = T.stream('user') ;
 stream.on('follow', followed);
+
+console.log('starting tweets');
