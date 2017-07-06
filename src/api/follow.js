@@ -2,6 +2,7 @@
 const config = require('../config.js');
 const twit = require('twit');
 const T = new twit(config.twitter);
+const chalk = require('chalk');
 
 console.log('Hitting follow.js');
 
@@ -20,9 +21,9 @@ const tweetNow = (tweetText) => {
   };
   T.post('statuses/update', tweet, (err, data, response) => {
     if(err) {
-      console.log('ERROR: in Follow TWEET');
+      console.log(chalk.bgRed('ERROR: in Follow TWEET'));
     }
-    console.log('SUCCESS: Replied to Follower');
+    console.log(chalk.bgGreen('SUCCESS: Replied to Follower'));
   });
 }
 // function tweetNow(tweetText) {

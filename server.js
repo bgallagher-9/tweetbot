@@ -1,8 +1,5 @@
 'use strict';
 
-// require('./src/bot');
-
-'use strict';
 const twit = require('twit');
 const config = require('./src/config');
 const T = new twit(config.twitter);
