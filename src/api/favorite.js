@@ -23,16 +23,17 @@ const favorite = () => {
     }
     else {
       const rando = Math.floor(Math.random() * params.count) + 1;
-      let retweetId
+      let favId
       try {
-        retweetId = data.statuses[rando].id_str
+        favId = data.statuses[rando].id_str
+        console.log(chalk.bgCyan('rando: ', rando));
       }
       catch (e) {
         console.log(chalk.bgMagenta('ERROR: Cannot assign retweetId'), e)
         return
       }
       T.post('favorites/create', {
-        id: retweetId
+        id: favId
       }, (err, response) => {
         if (err) {
           console.log(chalk.bgRed('ERROR: Cannot Favorite! ', err));
