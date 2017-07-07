@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^2.0.1",
-    "dotenv": "^4.0.0",
     "twit": "^2.2.5"
   },
   "devDependencies": {
+    "chalk": "^2.0.1",
+    "dotenv": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
