@@ -2,7 +2,6 @@
 const twit = require('twit');
 const config = require('../config.js');
 const T = new twit(config.twitter);
-const rando = require('./random.js');
 const chalk = require('chalk');
 
 console.log('Hitting retweet.js');

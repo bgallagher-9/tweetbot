@@ -13,7 +13,3 @@ module.exports = {
   retweetRate: 1500000,
   favoriteRate: 1500000
 };
-
-
-// retweetRate: process.env.RETWEET_RATE,
-// favoriteRate: process.env.FAVORITE_RATE

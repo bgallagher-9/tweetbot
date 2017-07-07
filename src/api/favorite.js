@@ -1,6 +1,5 @@
 'use strict'
 const config = require('../config');
-const rando = require('./random');
 const twit = require('twit');
 const T = new twit(config.twitter);
 const chalk = require('chalk');
@@ -42,17 +41,6 @@ const favorite = () => {
         console.log('SUCCESS: Favorited: ', randomTweet);
       })
     }
-
-    // if(typeof randomTweet != 'undefined') {
-    //   T.post('favorite/create', {
-    //     id: randomTweet.id_str
-    //   }, (err, response) => {
-    //     if(err) {
-    //       console.log(chalk.bgRed('ERROR: Cannot Favorite! ', err));
-    //     }
-    //     console.log(chalk.bgGreen('SUCCESS: Favorited: ', randomTweet));
-    //   });
-    // }
   });
 }
 
